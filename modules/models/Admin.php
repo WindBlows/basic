@@ -26,7 +26,7 @@ class Admin extends ActiveRecord
 		if (!$this->hasErrors()) {
 			$data = self::find()->where('adminuser = :user and adminpass = :pass',[":user" => $this->adminuser, ":pass" => $this->adminpass])->one();
 			if (is_null($data)) {
-				$this->addError("adminpass", "用户名或密码错误");
+				$this->addError("adminpass", "用户名或密码错误!");
 			}
 		}
 	}
