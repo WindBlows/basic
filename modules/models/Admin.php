@@ -14,8 +14,8 @@ class Admin extends ActiveRecord
 	public function rules()
 	{
 		return [
-			['adminuser', 'required', 'message' => '管理员账号不能为空'],
-			['adminpass', 'required', 'message' => '管理员密码不能为空'],
+			['adminuser', 'required', 'message' => '管理员账号不能为空!'],
+			['adminpass', 'required', 'message' => '管理员密码不能为空!'],
 			['rememberMe', 'boolean'],
 			['adminpass', 'validatePass'],
 		];
