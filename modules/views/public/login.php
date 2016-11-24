@@ -31,7 +31,7 @@ use yii\helpers\Html;
             <a class="brand" href="index.html"></a>
             <?php $form = ActiveForm::begin([
                     'fieldConfig' => [
-                        'template' => '{input}',
+                        'template' => '{input}{error}',
                     ]
             ]
             ); ?>
