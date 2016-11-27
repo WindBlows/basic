@@ -5,6 +5,7 @@ use Yii;
 class Admin extends ActiveRecord
 {
 	public $rememberMe = true;
+	public $repass;
 
 	public static function tableName()
 	{
@@ -66,7 +67,9 @@ class Admin extends ActiveRecord
 	{
 		$this->scenario = "seekpass";
 		if ($this->load($data) && $this->validate()) {
-			$mailer = Yii::$app->mailer->compose();
+			$time = time();
+			$token = $this->createToken($data['Admin']['adminuser'], $time);
+			$mailer = Yii::$app->mailer->compose('seekpass', ['adminuser' => $data['Admin']['adminuser'], 'time' => $time, 'token' => $token]);
 			$mailer->setFrom('goyo812@163.com');
 		    $mailer->setTo($data['Admin']['adminemail']);
 		    $mailer->setSubject("找回密码");
@@ -76,4 +79,16 @@ class Admin extends ActiveRecord
 		}
 		return false;
 	}
+
+	public function createToken($adminuser, $time)
+	{
+		return md5(md5($adminuser) . base64_encode(Yii::$app->request->userIP) . md5($time));
+	}
+
+
+
+
+
+
+
 }
