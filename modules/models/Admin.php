@@ -66,7 +66,13 @@ class Admin extends ActiveRecord
 	{
 		$this->scenario = "seekpass";
 		if ($this->load($data) && $this->validate()) {
-			
+			$mailer = Yii::$app->mailer->compose();
+			$mailer->setFrom('goyo812@163.com');
+		    $mailer->setTo($data['Admin']['adminemail']);
+		    $mailer->setSubject("找回密码");
+            if ($mailer->send()) {
+            	return true;
+            }
 		}
 		return false;
 	}
