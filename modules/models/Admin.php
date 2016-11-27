@@ -14,10 +14,13 @@ class Admin extends ActiveRecord
 	public function rules()
 	{
 		return [
-			['adminuser', 'required', 'message' => '管理员账号不能为空!'],
-			['adminpass', 'required', 'message' => '管理员密码不能为空!'],
-			['rememberMe', 'boolean'],
-			['adminpass', 'validatePass'],
+			['adminuser', 'required', 'message' => '管理员账号不能为空!', "on" => ['login', 'seekpass']],
+			['adminpass', 'required', 'message' => '管理员密码不能为空!', "on" => ['login']],
+			['rememberMe', 'boolean', "on" => ['login']],
+			['adminpass', 'validatePass', "on" => ['login']],
+			['adminemail', 'required', 'message' => '管理员邮箱不能为空!', "on" => ['seekpass']],
+			['adminemail', 'email', 'message' => '管理员邮箱格式不正确!', "on" => ['seekpass']],
+			['adminemail', 'validateEmail', "on" => ['seekpass']],
 		];
 	}
 
@@ -31,8 +34,20 @@ class Admin extends ActiveRecord
 		}
 	}
 
+	public function validateEmail()
+	{
+		if (!$this->hasErrors()) {
+			$data = self::find()->where('adminuser = :user and adminemail = :email', [":user" => $this->adminuser, ":email" => $this->adminemail])->one();
+			if (is_null($data)) {
+				$this->addError("adminemail", "管理员邮箱不匹配");
+				
+			}
+		}
+	}
+
 	public function login($data)
 	{
+		$this->scenario = "login";
 		if ($this->load($data) && $this->validate()) {
 			$lifetime = $this->rememberMe ? 24*3600 : 0;
 			$session = Yii::$app->session;
@@ -43,6 +58,15 @@ class Admin extends ActiveRecord
 			];
 			$this->updateAll(['logintime' => time(), 'loginip' => ip2long(Yii::$app->request->userIP)], 'adminuser = :user', [":user" => $this->adminuser]);
 			return (bool)$session['admin']['isLogin'];
+		}
+		return false;
+	}
+
+	public function seekPass($data)
+	{
+		$this->scenario = "seekpass";
+		if ($this->load($data) && $this->validate()) {
+			
 		}
 		return false;
 	}
