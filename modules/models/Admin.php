@@ -2,6 +2,7 @@
 namespace app\modules\models;
 use yii\db\ActiveRecord;
 use Yii;
+
 class Admin extends ActiveRecord
 {
 	public $rememberMe = true;
@@ -15,13 +16,14 @@ class Admin extends ActiveRecord
 	public function rules()
 	{
 		return [
-			['adminuser', 'required', 'message' => '管理员账号不能为空!', "on" => ['login', 'seekpass']],
-			['adminpass', 'required', 'message' => '管理员密码不能为空!', "on" => ['login']],
+			['adminuser', 'required', 'message' => '管理员账号不能为空!', 'on' => ['login', 'seekpass', 'changepass']],
+			['adminpass', 'required', 'message' => '管理员密码不能为空!', 'on' => ['login', 'changepass']],
 			['rememberMe', 'boolean', "on" => ['login']],
 			['adminpass', 'validatePass', "on" => ['login']],
-			['adminemail', 'required', 'message' => '管理员邮箱不能为空!', "on" => ['seekpass']],
-			['adminemail', 'email', 'message' => '管理员邮箱格式不正确!', "on" => ['seekpass']],
-			['adminemail', 'validateEmail', "on" => ['seekpass']],
+			['adminemail', 'required', 'message' => '管理员邮箱不能为空!', 'on' => 'seekpass'],
+			['adminemail', 'email', 'message' => '管理员邮箱格式不正确!', 'on' => 'seekpass'],
+			['adminemail', 'validateEmail', 'on' => 'seekpass'],
+			['repass', 'compare', 'compareAttribute' => 'adminpass', 'message' => '两次输入密码不一致', 'on' => 'changepass'],
 		];
 	}
 
@@ -85,6 +87,16 @@ class Admin extends ActiveRecord
 		return md5(md5($adminuser) . base64_encode(Yii::$app->request->userIP) . md5($time));
 	}
 
+	public function changePass($data)
+	{
+		//error_reporting(E_ALL);
+		//ini_set('display_errors', '1');
+		//print_r('ok');die();
+		$this->scenario = "changepass";
+		if ($this->load($data) && $this->validate()) {
+			
+		}
+	}
 
 
 

@@ -25,6 +25,12 @@ class ManageController extends Controller
 			$this->redirect(['public/login']);
 			Yii::$app->end();
 		}
+		if (Yii::$app->request->isPost) {
+			$post = Yii::$app->request->post();
+			if ($model->changePass($post)) {
+				Yii::$app->session->setFlash('info', '修改成功');
+			}
+		}
 		$model->adminuser = $adminuser;
 		return $this->render("mailchangepass", ['model' => $model]);
 	}
