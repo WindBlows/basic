@@ -9,6 +9,8 @@ use app\modules\models\Admin;
 
 class ManageController extends Controller
 {
+	public $enableCsrfValidation = false;
+	
 	public function actionMailchangepass()
 	{
 		$this->layout = false;
@@ -21,11 +23,12 @@ class ManageController extends Controller
 			$this->redirect(['public/login']);
 			Yii::$app->end();
 		}
-		if (time() - $time > 300) {
+		if (time() - $time > 3000) {
 			$this->redirect(['public/login']);
 			Yii::$app->end();
 		}
 		if (Yii::$app->request->isPost) {
+          //  print_r('ok');die();
 			$post = Yii::$app->request->post();
 			if ($model->changePass($post)) {
 				Yii::$app->session->setFlash('info', '修改成功');

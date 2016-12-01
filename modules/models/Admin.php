@@ -7,6 +7,7 @@ class Admin extends ActiveRecord
 {
 	public $rememberMe = true;
 	public $repass;
+	public $enableCsrfValidation = false;
 
 	public static function tableName()
 	{
@@ -17,20 +18,21 @@ class Admin extends ActiveRecord
 	{
 		return [
 			['adminuser', 'required', 'message' => '管理员账号不能为空!', 'on' => ['login', 'seekpass', 'changepass']],
-			['adminpass', 'required', 'message' => '管理员密码不能为空!', 'on' => ['login', 'changepass']],
-			['rememberMe', 'boolean', "on" => ['login']],
-			['adminpass', 'validatePass', "on" => ['login']],
+			['adminpass', 'required', 'message' => '密码不能为空!', 'on' => ['login', 'changepass']],
+			['rememberMe', 'boolean', 'on' => 'login'],
+			['adminpass', 'validatePass', 'on' => 'login'],
 			['adminemail', 'required', 'message' => '管理员邮箱不能为空!', 'on' => 'seekpass'],
 			['adminemail', 'email', 'message' => '管理员邮箱格式不正确!', 'on' => 'seekpass'],
 			['adminemail', 'validateEmail', 'on' => 'seekpass'],
 			['repass', 'compare', 'compareAttribute' => 'adminpass', 'message' => '两次输入密码不一致', 'on' => 'changepass'],
+			['repass', 'required', 'message' => '密码不能为空!', 'on' => 'changepass'],
 		];
 	}
 
 	public function validatePass()
 	{
 		if (!$this->hasErrors()) {
-			$data = self::find()->where('adminuser = :user and adminpass = :pass',[":user" => $this->adminuser, ":pass" => $this->adminpass])->one();
+			$data = self::find()->where('adminuser = :user and adminpass = :pass',[":user" => $this->adminuser, ":pass" => md5($this->adminpass)])->one();
 			if (is_null($data)) {
 				$this->addError("adminpass", "用户名或密码错误!");
 			}
@@ -94,8 +96,9 @@ class Admin extends ActiveRecord
 		//print_r('ok');die();
 		$this->scenario = "changepass";
 		if ($this->load($data) && $this->validate()) {
-			
+			return (bool)$this->updateAll(['adminpass' => md5($this->adminpass)], 'adminuser = :user', [':user' => $this->adminuser]);
 		}
+		return false;
 	}
 
 
