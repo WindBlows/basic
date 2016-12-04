@@ -2,10 +2,9 @@
 namespace app\modules\controllers;
 
 use yii\web\Controller;
-
 use Yii;
-
 use app\modules\models\Admin;
+use yii\data\Pagination;
 
 class ManageController extends Controller
 {
@@ -41,8 +40,12 @@ class ManageController extends Controller
 	public function actionManagers()
 	{
 		$this->layout = 'layout1';
-		$managers = Admin::find()->all();
-		return $this->render('managers', ['managers' => $managers]);
+		$model = Admin::find();
+		$count = $model->count();
+		$pageSize = Yii::$app->params['pageSize']['manage'];
+		$pager = new Pagination(['totalCount' => $count, 'pageSize' => $pageSize]);
+		$managers = $model->offset($pager->offset)->limit($pager->limit)->all();
+		return $this->render('managers', ['managers' => $managers, 'pager' => $pager]);
 
 	}
 }
