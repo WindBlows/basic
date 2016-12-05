@@ -22,7 +22,7 @@ class ManageController extends Controller
 			$this->redirect(['public/login']);
 			Yii::$app->end();
 		}
-		if (time() - $time > 3000) {
+		if (time() - $time > 300) {
 			$this->redirect(['public/login']);
 			Yii::$app->end();
 		}
@@ -60,6 +60,8 @@ class ManageController extends Controller
                 Yii::$app->session->setFlash('info', '添加失败');
             }
         }
+        $model->adminpass = '';
+        $model->repass = '';
         return $this->render('reg', ['model' => $model]);
     }
 }

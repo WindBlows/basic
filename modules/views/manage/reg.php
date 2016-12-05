@@ -14,10 +14,13 @@ use yii\helpers\Html;
                 <div class="span9 with-sidebar">
                     <div class="container">
                         <?php
+                        if (Yii::$app->session->hasFlash('info')) {
+                            echo Yii::$app->session->getFlash('info');
+                        }
                         $form = ActiveForm::begin([
                             'options' => ['class' => 'new_user_form inline-input'],
                             'fieldConfig' => [
-                                'template' => '<div class="span12 field-box">{label}{input}</div>'
+                                'template' => '<div class="span12 field-box">{label}{input}</div>{error}'
                             ]
                         ]);
                         ?>
