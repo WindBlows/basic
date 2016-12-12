@@ -27,15 +27,15 @@ class Admin extends ActiveRecord
 	public function rules()
 	{
 		return [
-			['adminuser', 'required', 'message' => '管理员账号不能为空!', 'on' => ['login', 'seekpass', 'changepass', 'adminadd']],
-			['adminpass', 'required', 'message' => '密码不能为空!', 'on' => ['login', 'changepass', 'adminadd']],
+			['adminuser', 'required', 'message' => '管理员账号不能为空!', 'on' => ['login', 'seekpass', 'changepass', 'adminadd', 'changeemail']],
+			['adminpass', 'required', 'message' => '密码不能为空!', 'on' => ['login', 'changepass', 'adminadd', 'changeemail']],
 			['rememberMe', 'boolean', 'on' => 'login'],
-			['adminpass', 'validatePass', 'on' => 'login'],
-			['adminemail', 'required', 'message' => '管理员邮箱不能为空!', 'on' => ['seekpass', 'adminadd']],
-			['adminemail', 'email', 'message' => '管理员邮箱格式不正确!', 'on' => ['seekpass', 'adminadd']],
+			['adminpass', 'validatePass', 'on' => ['login', 'changeemail']],
+			['adminemail', 'required', 'message' => '管理员邮箱不能为空!', 'on' => ['seekpass', 'adminadd', 'changeemail']],
+			['adminemail', 'email', 'message' => '管理员邮箱格式不正确!', 'on' => ['seekpass', 'adminadd', 'changeemail']],
             ['adminemail', 'unique', 'message' => '管理员邮箱已被注册!', 'on' => ['adminadd']],
             ['adminuser', 'unique', 'message' => '管理员已被注册!', 'on' => ['adminadd']],
-            ['adminemail', 'validateEmail', 'on' => 'seekpass'],
+            ['adminemail', 'validateEmail', 'on' => ['seekpass']],
 			['repass', 'compare', 'compareAttribute' => 'adminpass', 'message' => '两次输入密码不一致', 'on' => ['changepass', 'adminadd', 'adminadd']],
 			['repass', 'required', 'message' => '密码不能为空!', 'on' => ['changepass', 'adminadd']],
 		];
@@ -128,6 +128,14 @@ class Admin extends ActiveRecord
             return false;
     }
 
+    public function changeemail($data)
+    {
+    	$this->scenario = 'changeemail';
+    	if ($this->load($data) && $this->validate()) {
+    		return (bool)$this->updateAll(['adminemail' => $this->adminemail], 'adminuser = :user',[':user' => $this->adminuser]);
+    	}
+    	return false;
+    }
 
 
 
