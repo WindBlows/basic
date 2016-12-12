@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="51accd24-9c9c-4070-97b3-6c7d6576b0cf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/params.php" afterPath="$PROJECT_DIR$/config/params.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/controllers/ManageController.php" afterPath="$PROJECT_DIR$/modules/controllers/ManageController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/models/Admin.php" afterPath="$PROJECT_DIR$/modules/models/Admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/views/manage/reg.php" afterPath="$PROJECT_DIR$/modules/views/manage/reg.php" />
-    </list>
+    <list default="true" id="51accd24-9c9c-4070-97b3-6c7d6576b0cf" name="Default" comment="" />
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -53,8 +48,8 @@
       <file leaf-file-name="Admin.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modules/models/Admin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="99" column="5" lean-forward="true" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
+            <state relative-caret-position="401">
+              <caret line="98" column="49" lean-forward="true" selection-start-line="98" selection-start-column="49" selection-end-line="98" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -394,16 +389,16 @@
       <workItem from="1480945449291" duration="493000" />
       <workItem from="1480946731447" duration="42000" />
       <workItem from="1480946780195" duration="3000" />
-      <workItem from="1480946807627" duration="2775000" />
+      <workItem from="1480946807627" duration="2847000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6574000" />
+    <option name="totallyTimeSpent" value="6646000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24609375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -782,8 +777,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/models/Admin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="99" column="5" lean-forward="true" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
+        <state relative-caret-position="401">
+          <caret line="98" column="49" lean-forward="true" selection-start-line="98" selection-start-column="49" selection-end-line="98" selection-end-column="49" />
           <folding />
         </state>
       </provider>
