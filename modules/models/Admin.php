@@ -56,8 +56,7 @@ class Admin extends ActiveRecord
 		if (!$this->hasErrors()) {
 			$data = self::find()->where('adminuser = :user and adminemail = :email', [":user" => $this->adminuser, ":email" => $this->adminemail])->one();
 			if (is_null($data)) {
-				$this->addError("adminemail", "管理员邮箱不匹配");
-				
+				$this->addError("adminemail", "管理员邮箱不匹配");	
 			}
 		}
 	}
