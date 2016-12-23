@@ -11,11 +11,6 @@ class UserController extends Controller
 {
 	public $enableCsrfValidation = false;
 
-	public function actionUsers()
-	{
-
-	}
-
 	public function actionReg()
     {
         $this->layout = "layout1";
@@ -29,5 +24,16 @@ class UserController extends Controller
         $model->userpass = '';
         $model->repass = '';
         return $this->render("reg", ['model' => $model]);
+    }
+
+    public function actionUsers()
+	{
+		$this->layout = 'layout1';
+		$model = User::find()->joinWith('profile');
+		$count = $model->count();
+		$pageSize = Yii::$app->params['pageSize']['user'];
+		$pager = new Pagination(['totalCount' => $count, 'pageSize' => $pageSize]);
+		$users = $model->offset($pager->offset)->limit($pager->limit)->all();
+		return $this->render('users', ['users' => $users, 'pager' => $pager]);
     }
 }
