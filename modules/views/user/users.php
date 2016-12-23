@@ -77,6 +77,10 @@
                         <?php endforeach; ?>
                         </tbody>
                     </table>
+                    <?php if (Yii::$app->session->hasFlash('info')) {
+                                echo Yii::$app->session->getFlash('info');
+                            }
+                    ?>
                 </div>
                 <div class="pagination pull-right">
                     <?php echo yii\widgets\LinkPager::widget([

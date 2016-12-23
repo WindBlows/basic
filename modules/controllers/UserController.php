@@ -36,4 +36,17 @@ class UserController extends Controller
 		$users = $model->offset($pager->offset)->limit($pager->limit)->all();
 		return $this->render('users', ['users' => $users, 'pager' => $pager]);
     }
+
+    public function actionDel()
+    {
+    	$userid = (int)Yii::$app->request->get("userid");
+    	if (empty($iserid)) {
+    		$this->redirect(['user/users']);
+    	}
+    	$model = new User;
+    	if ($model->deleteAll('userid = :id', [':id' => $userid])) {
+    		Yii::$app->session->setFlash('info', '删除成功');
+    		$this->redirect(['user/users']);
+    	}
+    }
 }
