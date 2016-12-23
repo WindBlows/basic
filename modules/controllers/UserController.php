@@ -39,14 +39,29 @@ class UserController extends Controller
 
     public function actionDel()
     {
-    	$userid = (int)Yii::$app->request->get("userid");
-    	if (empty($iserid)) {
-    		$this->redirect(['user/users']);
-    	}
-    	$model = new User;
-    	if ($model->deleteAll('userid = :id', [':id' => $userid])) {
-    		Yii::$app->session->setFlash('info', '删除成功');
-    		$this->redirect(['user/users']);
-    	}
+    	try{
+            $userid = (int)Yii::$app->request->get('userid');
+            if (empty($userid)) {
+                throw new \Exception();
+            }
+            $trans = Yii::$app->db->beginTransaction();
+            if ($obj = Profile::find()->where('userid = :id', [':id' => $userid])->one()) {
+                $res = Profile::deleteAll('userid = :id', [':id' => $userid]);
+                if (empty($res)) {
+                    throw new \Exception();
+                }
+            }
+            if (!User::deleteAll('userid = :id', [':id' => $userid])) {
+                throw new \Exception();
+            }
+            Yii::$app->session->setFlash('info', '删除成功');
+            $trans->commit();
+        } catch(\Exception $e) {
+            if (Yii::$app->db->getTransaction()) {
+            	Yii::$app->session->setFlash('info', '删除失败');
+                $trans->rollback();
+            }
+        }
+        $this->redirect(['user/users']);
     }
 }
