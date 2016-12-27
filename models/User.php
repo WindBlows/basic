@@ -57,9 +57,9 @@ class User extends ActiveRecord
             'loginname' => '用户名/电子邮箱',
         ];
     }
-    public function reg($data)
+    public function reg($data, $scenario = 'reg')
     {
-        $this->scenario = 'reg';
+        $this->scenario = $scenario;
         if ($this->load($data) && $this->validate()) {
             $this->createtime = time();
             $this->userpass = md5($this->userpass);
@@ -70,8 +70,41 @@ class User extends ActiveRecord
         }
         return false;
     }
+
     public function getProfile()
     {
         return $this->hasOne(Profile::className(), ['userid' => 'userid']);
     }
+
+    public function regByMail($data)
+    {
+        $data['User']['username'] = 'imooc_'.uniqid();
+        $data['User']['userpass'] = uniqid();
+        $this->scenario = 'regbymail';
+        if ($this->load($data) && $this->validate()) {
+            $mailer = Yii::$app->mailer->compose('createuser', ['userpass' => $data['User']['userpass'], 'username' => $data['User']['username']]);
+            $mailer->setFrom('goyo812@163.com');
+            $mailer->setTo($data['User']['useremail']);
+            $mailer->setSubject('慕课商城-新建用户');
+            if ($mailer->send() && $this->reg($data, 'regbymail')) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public function login($data)
+    {
+        $scenario = 'login';
+        if ($this->load($data) && $this->validate()) {
+            $lifetime = $this->rememberMe ? 24*3600 : 0;
+            $session = Yii::$app->session;
+            session_set_cookie_params($lifetime);
+            $session['loginname'] = $this->loginname;
+            $session['isLogin'] = 1;
+            return (bool)$session['isLogin'];
+        }
+        return false;
+    }
+    
 }
