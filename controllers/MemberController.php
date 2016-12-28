@@ -10,6 +10,7 @@ class MemberController extends Controller
 	public function actionAuth()
     {
          $this->layout = 'layout2';
+         //echo get_class(Yii::$app->request);
         if (Yii::$app->request->isGet) {
             $url = Yii::$app->request->referrer;
             if (empty($url)) {
@@ -39,5 +40,14 @@ class MemberController extends Controller
         }
         $this->layout = 'layout2';
         return $this->render('auth', ['model' => $model]);
+    }
+
+    public function actionLogout()
+    {   
+        Yii::$app->session->remove('loginname');
+        Yii::$app->session->remove('isLogin');
+        if (!isset(Yii::$app->session['isLogin'])) {
+            return $this->goBack(Yii::$app->request->referrer);
+        }
     }
 }
