@@ -6,7 +6,7 @@ use yii\helpers\Html;
 <html class="login-bg">
     
     <head>
-        <title>慕课商城 - 后台管理</title>
+        <title>东软商城 - 后台管理</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <!-- bootstrap -->
         <link href="assets/admin/css/bootstrap/bootstrap.css" rel="stylesheet" />
@@ -38,7 +38,7 @@ use yii\helpers\Html;
                 <input type="hidden" name="_csrf" value="VGVVTVVZb0UmKzIrLWtCL2VdNB0tLxoQJVU0AQA6JzMwIgQ0Zy0sNw==">
                 <div class="span4 box">
                     <div class="content-wrap">
-                        <h6>慕课商城 - 后台管理</h6>
+                        <h6>东软商城 - 后台管理</h6>
                         
                             <?php echo $form->field($model, 'adminuser')->textInput(["class" => "span12", "placeholder" => "管理员账号"]); ?>
                             

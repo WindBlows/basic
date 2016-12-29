@@ -10,7 +10,7 @@
 	    <meta name="keywords" content="MediaCenter, Template, eCommerce">
 	    <meta name="robots" content="all">
 
-	    <title>慕课商城</title>
+	    <title>东软商城</title>
 	    <!-- Bootstrap Core CSS -->
 	    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	    
@@ -429,7 +429,7 @@
     
     <p>
         西城区二环到三环德胜门外大街10号TCL大厦3层(马甸桥南), 北京市西城区, 中国
-        <br>慕课网 (QQ群:416465236)
+        <br>东软网 (QQ群:416465236)
     </p>
     
     <!--<div class="social-icons">

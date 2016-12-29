@@ -135,8 +135,4 @@ class Admin extends ActiveRecord
     	}
     	return false;
     }
-
-
-
-
 }
