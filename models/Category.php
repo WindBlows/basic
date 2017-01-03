@@ -40,7 +40,7 @@ class Category extends ActiveRecord
     public function getData()
     {
     	$cates = self::find()->all();
-    	print_r($cates);
+    	//print_r($cates);
     	$cates = ArrayHelper::toArray($cates);
     	return $cates;
     }
@@ -90,5 +90,12 @@ class Category extends ActiveRecord
             $options[$cate['cateid']] = $cate['title'];
         }
         return $options;
+    }
+
+    public function getTreeList()
+    {
+        $data = $this->getData();
+        $tree = $this->getTree($data);
+        return $tree = $this->setPrefix($tree);
     }
 }
