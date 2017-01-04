@@ -1,23 +1,26 @@
 [
     {
         "name": "yiisoft/yii2-composer",
-        "version": "2.0.4",
-        "version_normalized": "2.0.4.0",
+        "version": "2.0.5",
+        "version_normalized": "2.0.5.0",
         "source": {
             "type": "git",
             "url": "https://github.com/yiisoft/yii2-composer.git",
-            "reference": "7452fd908a5023b8bb5ea1b123a174ca080de464"
+            "reference": "3f4923c2bde6caf3f5b88cc22fdd5770f52f8df2"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/yiisoft/yii2-composer/zipball/7452fd908a5023b8bb5ea1b123a174ca080de464",
-            "reference": "7452fd908a5023b8bb5ea1b123a174ca080de464",
+            "url": "https://packagist.phpcomposer.com/files/yiisoft/yii2-composer/3f4923c2bde6caf3f5b88cc22fdd5770f52f8df2.zip",
+            "reference": "3f4923c2bde6caf3f5b88cc22fdd5770f52f8df2",
             "shasum": ""
         },
         "require": {
             "composer-plugin-api": "^1.0"
         },
-        "time": "2016-02-06 00:49:24",
+        "require-dev": {
+            "composer/composer": "^1.0"
+        },
+        "time": "2016-12-20T13:26:02+00:00",
         "type": "composer-plugin",
         "extra": {
             "class": "yii\\composer\\Plugin",
@@ -50,26 +53,27 @@
     },
     {
         "name": "swiftmailer/swiftmailer",
-        "version": "v5.4.3",
-        "version_normalized": "5.4.3.0",
+        "version": "v5.4.5",
+        "version_normalized": "5.4.5.0",
         "source": {
             "type": "git",
             "url": "https://github.com/swiftmailer/swiftmailer.git",
-            "reference": "4cc92842069c2bbc1f28daaaf1d2576ec4dfe153"
+            "reference": "cd142238a339459b10da3d8234220963f392540c"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/4cc92842069c2bbc1f28daaaf1d2576ec4dfe153",
-            "reference": "4cc92842069c2bbc1f28daaaf1d2576ec4dfe153",
+            "url": "https://packagist.phpcomposer.com/files/swiftmailer/swiftmailer/cd142238a339459b10da3d8234220963f392540c.zip",
+            "reference": "cd142238a339459b10da3d8234220963f392540c",
             "shasum": ""
         },
         "require": {
             "php": ">=5.3.3"
         },
         "require-dev": {
-            "mockery/mockery": "~0.9.1"
+            "mockery/mockery": "~0.9.1",
+            "symfony/phpunit-bridge": "~3.2"
         },
-        "time": "2016-07-08 11:51:25",
+        "time": "2016-12-29T10:02:40+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -208,12 +212,12 @@
         "version_normalized": "3.2.7.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/RobinHerbots/jquery.inputmask.git",
+            "url": "https://github.com/RobinHerbots/Inputmask.git",
             "reference": "5a72c563b502b8e05958a524cdfffafe9987be38"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/RobinHerbots/jquery.inputmask/zipball/5a72c563b502b8e05958a524cdfffafe9987be38",
+            "url": "https://api.github.com/repos/RobinHerbots/Inputmask/zipball/5a72c563b502b8e05958a524cdfffafe9987be38",
             "reference": "5a72c563b502b8e05958a524cdfffafe9987be38",
             "shasum": ""
         },
@@ -252,17 +256,17 @@
     },
     {
         "name": "cebe/markdown",
-        "version": "1.1.0",
-        "version_normalized": "1.1.0.0",
+        "version": "1.1.1",
+        "version_normalized": "1.1.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/cebe/markdown.git",
-            "reference": "54a2c49de31cc44e864ebf0500a35ef21d0010b2"
+            "reference": "c30eb5e01fe021cc5bba2f9ee0eeef96d4931166"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/cebe/markdown/zipball/54a2c49de31cc44e864ebf0500a35ef21d0010b2",
-            "reference": "54a2c49de31cc44e864ebf0500a35ef21d0010b2",
+            "url": "https://packagist.phpcomposer.com/files/cebe/markdown/c30eb5e01fe021cc5bba2f9ee0eeef96d4931166.zip",
+            "reference": "c30eb5e01fe021cc5bba2f9ee0eeef96d4931166",
             "shasum": ""
         },
         "require": {
@@ -274,7 +278,7 @@
             "facebook/xhprof": "*@dev",
             "phpunit/phpunit": "4.1.*"
         },
-        "time": "2015-03-06 05:28:07",
+        "time": "2016-09-14T20:40:20+00:00",
         "bin": [
             "bin/markdown"
         ],
@@ -314,23 +318,23 @@
     },
     {
         "name": "ezyang/htmlpurifier",
-        "version": "v4.7.0",
-        "version_normalized": "4.7.0.0",
+        "version": "v4.8.0",
+        "version_normalized": "4.8.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/ezyang/htmlpurifier.git",
-            "reference": "ae1828d955112356f7677c465f94f7deb7d27a40"
+            "reference": "d0c392f77d2f2a3dcf7fcb79e2a1e2b8804e75b2"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/ae1828d955112356f7677c465f94f7deb7d27a40",
-            "reference": "ae1828d955112356f7677c465f94f7deb7d27a40",
+            "url": "https://packagist.phpcomposer.com/files/ezyang/htmlpurifier/d0c392f77d2f2a3dcf7fcb79e2a1e2b8804e75b2.zip",
+            "reference": "d0c392f77d2f2a3dcf7fcb79e2a1e2b8804e75b2",
             "shasum": ""
         },
         "require": {
             "php": ">=5.2"
         },
-        "time": "2015-08-05 01:03:42",
+        "time": "2016-07-16T12:58:58+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -360,17 +364,17 @@
     },
     {
         "name": "yiisoft/yii2",
-        "version": "2.0.9",
-        "version_normalized": "2.0.9.0",
+        "version": "2.0.10",
+        "version_normalized": "2.0.10.0",
         "source": {
             "type": "git",
             "url": "https://github.com/yiisoft/yii2-framework.git",
-            "reference": "2b75151ea60e1fd820046416eee2e89c3dda1133"
+            "reference": "5bfcb7a6dfa9771e2248eb8c4448613330f343ff"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/2b75151ea60e1fd820046416eee2e89c3dda1133",
-            "reference": "2b75151ea60e1fd820046416eee2e89c3dda1133",
+            "url": "https://packagist.phpcomposer.com/files/yiisoft/yii2-framework/5bfcb7a6dfa9771e2248eb8c4448613330f343ff.zip",
+            "reference": "5bfcb7a6dfa9771e2248eb8c4448613330f343ff",
             "shasum": ""
         },
         "require": {
@@ -386,7 +390,7 @@
             "php": ">=5.4.0",
             "yiisoft/yii2-composer": "~2.0.4"
         },
-        "time": "2016-07-11 13:36:42",
+        "time": "2016-10-20T12:02:50+00:00",
         "bin": [
             "yii"
         ],
@@ -456,24 +460,24 @@
     },
     {
         "name": "yiisoft/yii2-swiftmailer",
-        "version": "2.0.5",
-        "version_normalized": "2.0.5.0",
+        "version": "2.0.6",
+        "version_normalized": "2.0.6.0",
         "source": {
             "type": "git",
             "url": "https://github.com/yiisoft/yii2-swiftmailer.git",
-            "reference": "e2c6315caff30a9271a7afad4d684627721dc69a"
+            "reference": "26b900767f1031ff3a4668dfa36c10595875f0a5"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/yiisoft/yii2-swiftmailer/zipball/e2c6315caff30a9271a7afad4d684627721dc69a",
-            "reference": "e2c6315caff30a9271a7afad4d684627721dc69a",
+            "url": "https://packagist.phpcomposer.com/files/yiisoft/yii2-swiftmailer/26b900767f1031ff3a4668dfa36c10595875f0a5.zip",
+            "reference": "26b900767f1031ff3a4668dfa36c10595875f0a5",
             "shasum": ""
         },
         "require": {
             "swiftmailer/swiftmailer": "~5.0",
-            "yiisoft/yii2": ">=2.0.4"
+            "yiisoft/yii2": "~2.0.4"
         },
-        "time": "2016-03-17 03:58:49",
+        "time": "2016-09-09T11:48:11+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -517,14 +521,14 @@
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/yiisoft/yii2-codeception/zipball/c916a36d09fc128b05a374e7922bc56854334d56",
+            "url": "https://packagist.phpcomposer.com/files/yiisoft/yii2-codeception/c916a36d09fc128b05a374e7922bc56854334d56.zip",
             "reference": "c916a36d09fc128b05a374e7922bc56854334d56",
             "shasum": ""
         },
         "require": {
             "yiisoft/yii2": ">=2.0.4"
         },
-        "time": "2016-03-17 03:41:26",
+        "time": "2016-03-17T03:41:26+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -551,25 +555,26 @@
         "keywords": [
             "codeception",
             "yii2"
-        ]
+        ],
+        "abandoned": "codeception/codeception"
     },
     {
         "name": "bower-asset/bootstrap",
-        "version": "v3.3.5",
-        "version_normalized": "3.3.5.0",
+        "version": "v3.3.7",
+        "version_normalized": "3.3.7.0",
         "source": {
             "type": "git",
             "url": "https://github.com/twbs/bootstrap.git",
-            "reference": "16b48259a62f576e52c903c476bd42b90ab22482"
+            "reference": "0b9c4a4007c44201dce9a6cc1a38407005c26c86"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/twbs/bootstrap/zipball/16b48259a62f576e52c903c476bd42b90ab22482",
-            "reference": "16b48259a62f576e52c903c476bd42b90ab22482",
+            "url": "https://api.github.com/repos/twbs/bootstrap/zipball/0b9c4a4007c44201dce9a6cc1a38407005c26c86",
+            "reference": "0b9c4a4007c44201dce9a6cc1a38407005c26c86",
             "shasum": ""
         },
         "require": {
-            "bower-asset/jquery": ">=1.9.1"
+            "bower-asset/jquery": ">=1.9.1,<=3"
         },
         "type": "bower-asset-library",
         "extra": {
@@ -615,7 +620,7 @@
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/3fd2b8c950cce79d60e9702d6bcb24eb3c80f6c5",
+            "url": "https://packagist.phpcomposer.com/files/yiisoft/yii2-bootstrap/3fd2b8c950cce79d60e9702d6bcb24eb3c80f6c5.zip",
             "reference": "3fd2b8c950cce79d60e9702d6bcb24eb3c80f6c5",
             "shasum": ""
         },
@@ -623,7 +628,7 @@
             "bower-asset/bootstrap": "3.3.* | 3.2.* | 3.1.*",
             "yiisoft/yii2": ">=2.0.6"
         },
-        "time": "2016-03-17 03:29:28",
+        "time": "2016-03-17T03:29:28+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -658,24 +663,24 @@
     },
     {
         "name": "yiisoft/yii2-debug",
-        "version": "2.0.6",
-        "version_normalized": "2.0.6.0",
+        "version": "2.0.7",
+        "version_normalized": "2.0.7.0",
         "source": {
             "type": "git",
             "url": "https://github.com/yiisoft/yii2-debug.git",
-            "reference": "55ed2e853ed8050a34415f63a4da84f88a56f895"
+            "reference": "a74a2433ad1dfda30a253a92f6db52c131807432"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/55ed2e853ed8050a34415f63a4da84f88a56f895",
-            "reference": "55ed2e853ed8050a34415f63a4da84f88a56f895",
+            "url": "https://packagist.phpcomposer.com/files/yiisoft/yii2-debug/a74a2433ad1dfda30a253a92f6db52c131807432.zip",
+            "reference": "a74a2433ad1dfda30a253a92f6db52c131807432",
             "shasum": ""
         },
         "require": {
-            "yiisoft/yii2": ">=2.0.4",
-            "yiisoft/yii2-bootstrap": "*"
+            "yiisoft/yii2": "~2.0.4",
+            "yiisoft/yii2-bootstrap": "~2.0.0"
         },
-        "time": "2016-03-17 03:50:19",
+        "time": "2016-11-24T09:42:29+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -745,11 +750,11 @@
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/phpspec/php-diff/zipball/0464787bfa7cd13576c5a1e318709768798bec6a",
+            "url": "https://packagist.phpcomposer.com/files/phpspec/php-diff/0464787bfa7cd13576c5a1e318709768798bec6a.zip",
             "reference": "0464787bfa7cd13576c5a1e318709768798bec6a",
             "shasum": ""
         },
-        "time": "2016-04-07 12:29:16",
+        "time": "2016-04-07T12:29:16+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -785,7 +790,7 @@
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/1bd6df6804ca077ec022587905a0d43eb286f507",
+            "url": "https://packagist.phpcomposer.com/files/yiisoft/yii2-gii/1bd6df6804ca077ec022587905a0d43eb286f507.zip",
             "reference": "1bd6df6804ca077ec022587905a0d43eb286f507",
             "shasum": ""
         },
@@ -795,7 +800,7 @@
             "yiisoft/yii2": ">=2.0.4",
             "yiisoft/yii2-bootstrap": "~2.0"
         },
-        "time": "2016-03-18 14:09:46",
+        "time": "2016-03-18T14:09:46+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -840,7 +845,7 @@
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/44f9a286a04b80c76a4e5fb7aad8bb539b920123",
+            "url": "https://packagist.phpcomposer.com/files/fzaninotto/Faker/44f9a286a04b80c76a4e5fb7aad8bb539b920123.zip",
             "reference": "44f9a286a04b80c76a4e5fb7aad8bb539b920123",
             "shasum": ""
         },
@@ -852,7 +857,7 @@
             "phpunit/phpunit": "~4.0",
             "squizlabs/php_codesniffer": "~1.5"
         },
-        "time": "2016-04-29 12:21:54",
+        "time": "2016-04-29T12:21:54+00:00",
         "type": "library",
         "extra": {
             "branch-alias": []
@@ -890,7 +895,7 @@
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/yiisoft/yii2-faker/zipball/b88ca69ee226a3610b2c26c026c3203d7ac50f6c",
+            "url": "https://packagist.phpcomposer.com/files/yiisoft/yii2-faker/b88ca69ee226a3610b2c26c026c3203d7ac50f6c.zip",
             "reference": "b88ca69ee226a3610b2c26c026c3203d7ac50f6c",
             "shasum": ""
         },
@@ -898,7 +903,7 @@
             "fzaninotto/faker": "*",
             "yiisoft/yii2": "*"
         },
-        "time": "2015-03-01 06:22:44",
+        "time": "2015-03-01T06:22:44+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -926,6 +931,49 @@
             "Fixture",
             "faker",
             "yii2"
+        ]
+    },
+    {
+        "name": "crazyfd/yii2-qiniu",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/crazyfd/yii2-qiniu.git",
+            "reference": "ef6d78c59d7099c0994ad809288b57896fbaf242"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://packagist.phpcomposer.com/files/crazyfd/yii2-qiniu/ef6d78c59d7099c0994ad809288b57896fbaf242.zip",
+            "reference": "ef6d78c59d7099c0994ad809288b57896fbaf242",
+            "shasum": ""
+        },
+        "require": {
+            "yiisoft/yii2": "*"
+        },
+        "time": "2016-08-31T00:36:28+00:00",
+        "type": "yii2-extension",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "crazyfd\\qiniu\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "crazyfd",
+                "email": "crazyfd@qq.com"
+            }
+        ],
+        "description": "yii2上传到七牛云存储",
+        "keywords": [
+            "qiniu",
+            "upload",
+            "yii"
         ]
     }
 ]

@@ -30,7 +30,7 @@
                                 echo $form->field($model, 'title')->textInput(['class' => 'span9']);
                                 ?>
                                 <div class="span11 field-box actions">
-                                    <?php echo Html::submitButton('添加', ['class' => 'btn-glow primary']); ?>
+                                    <?php echo Html::submitButton('修改', ['class' => 'btn-glow primary']); ?>
                                     <span>OR</span>
                                     <?php echo Html::resetButton('取消', ['class' => 'reset']); ?>
                                 </div>
