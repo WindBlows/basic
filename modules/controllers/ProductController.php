@@ -69,6 +69,11 @@ class ProductController extends Controller
 		}
 		return ['cover' => $cover, 'pics' => json_encode($pics)];
 	}
+    
+    public function actionMod()
+    {
+
+    }
 
 
 
