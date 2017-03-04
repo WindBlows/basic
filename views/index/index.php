@@ -324,45 +324,7 @@
                     <?php endfor; ?>
                 </div><!-- /.row -->
             </div><!-- /.col -->
-            <div class="col-xs-12 col-md-5 no-margin">
-                <div class="product-item-holder size-big single-product-gallery small-gallery">
-                    <?php $last = $data['all'][count($data['all'])-1];?>
-                    <div id="best-seller-single-product-slider" class="single-product-slider owl-carousel">
-                        <div class="single-product-gallery-item" id="slide1">
-                        <a data-rel="prettyphoto" href="<?php echo $last->cover ?>">
-                        <img alt="<?php echo $last->title ?>" src="<?php echo $last->cover ?>-coverbig" data-echo="<?php echo $last->cover ?>-coverbig" />
-                            </a>
-                        </div><!-- /.single-product-gallery-item -->
-                        <?php foreach((array)json_decode($last->pics, true) as $key => $pic): ?>
-                        <div class="single-product-gallery-item" id="slide<?php echo $key+2; ?>">
-                            <a data-rel="prettyphoto" href="<?php echo $last->pics ?>">
-                                <img alt="" src="<?php echo $pic ?>-picbig" data-echo="<?php echo $pic ?>-picbig" />
-                            </a>
-                        </div><!-- /.single-product-gallery-item -->
-                        <?php endforeach; ?>
-                    </div><!-- /.single-product-slider -->
 
-                    <div class="gallery-thumbs clearfix">
-                        <ul>
-                        <li><a class="horizontal-thumb active" data-target="#best-seller-single-product-slider" data-slide="0" href="#slide1"><img alt="<?php echo $last->title ?>" src="<?php echo $last->cover ?>-picsmall" data-echo="<?php echo $last->cover ?>-picsmall" /></a></li>
-                        <?php foreach ((array)json_decode($last->pics, true) as $key => $pic): ?>
-                            <li><a class="horizontal-thumb" data-target="#best-seller-single-product-slider" data-slide="<?php echo $key+1; ?>" href="#slide<?php echo $key+2; ?>"><img alt="" src="<?php echo $pic ?>-picsmall" data-echo="<?php echo $pic ?>-picsmall" /></a></li>
-                        <?php endforeach; ?>
-                        </ul>
-                    </div><!-- /.gallery-thumbs -->
-
-                    <div class="body">
-                        <div class="label-discount clear"></div>
-                        <div class="title">
-                        <a href="<?php echo yii\helpers\Url::to(['product/detail', 'productid' => $last->productid]) ?>"><?php echo $last->title ?></a>
-                        </div>
-                    </div>
-                    <div class="prices text-right">
-                    <div class="price-current inline">￥<?php echo $last->saleprice ?></div>
-                    <a href="<?php echo yii\helpers\Url::to(['cart/add', 'productid' => $last->productid]) ?>" class="le-button big inline">加入购物车</a>
-                    </div>
-                </div><!-- /.product-item-holder -->
-            </div><!-- /.col -->
 
         </div><!-- /.product-grid-holder -->
     </div><!-- /.container -->
@@ -393,7 +355,7 @@
                         <?php endif; ?>
 
                         <div class="image">
-                            <img alt="<?php echo $pro->title ?>" src="<?php echo $pro->cover ?>-covermiddle" data-echo="<?php echo $pro->cover ?>-covermiddle" />
+                            <img alt="<?php echo $pro->title ?>" src="<?php echo "http://" . $pro->cover ?>-a1" data-echo="<?php echo "http://" . $pro->cover ?>-a1" />
                         </div>
                         <div class="body">
                             <div class="title">
