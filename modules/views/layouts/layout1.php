@@ -163,7 +163,7 @@
                     <div class="arrow"></div>
                     <div class="arrow_border"></div>
                 </div>
-                <a href="index.html">
+                <a href="<?php echo yii\helpers\Url::to(['default/index'])?>">
                     <i class="icon-home"></i>
                     <span>后台首页</span>
                 </a>

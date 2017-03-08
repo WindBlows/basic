@@ -34,12 +34,12 @@ class CartController extends CommonController
 			$model = Product::find()->where('productid = :pid', [':pid' => $productid])->one();
 			$price = $model->issale ? $model->saleprice : $model->price;
 			$num = 1;
-			$data['Cart'] = ['productid' => $productid, 'proudctnum' => $num, 'price' => $price, 'userid' => $userid];
+			$data['Cart'] = ['productid' => $productid, 'productnum' => $num, 'price' => $price, 'userid' => $userid];
 		}
 		if (!$model = Cart::find()->where('productid = :pid and userid = :uid', [':pid' => $productid, ':uid' => $userid])->one()) {
 			$model = new Cart;
 		} else {
-			$data['Cart']['proudctnum'] = $model->proudctnum + $num;
+			$data['Cart']['productnum'] = $model->productnum + $num;
 		}
 		$data['Cart']['createtime'] = time();
 		$model->load($data);
