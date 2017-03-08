@@ -9,7 +9,6 @@ class User extends ActiveRecord
     public $repass;
     public $loginname;
     public $rememberMe = true;
-    
     public static function tableName()
     {
         return "{{%user}}";
@@ -57,6 +56,7 @@ class User extends ActiveRecord
             'loginname' => '用户名/电子邮箱',
         ];
     }
+
     public function reg($data, $scenario = 'reg')
     {
         $this->scenario = $scenario;
@@ -76,27 +76,11 @@ class User extends ActiveRecord
         return $this->hasOne(Profile::className(), ['userid' => 'userid']);
     }
 
-    public function regByMail($data)
-    {
-        $data['User']['username'] = 'imooc_'.uniqid();
-        $data['User']['userpass'] = uniqid();
-        $this->scenario = 'regbymail';
-        if ($this->load($data) && $this->validate()) {
-            $mailer = Yii::$app->mailer->compose('createuser', ['userpass' => $data['User']['userpass'], 'username' => $data['User']['username']]);
-            $mailer->setFrom('goyo812@163.com');
-            $mailer->setTo($data['User']['useremail']);
-            $mailer->setSubject('东软商城-新建用户');
-            if ($mailer->send() && $this->reg($data, 'regbymail')) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     public function login($data)
     {
-        $scenario = 'login';
+        $this->scenario = "login";
         if ($this->load($data) && $this->validate()) {
+            //做点有意义的事
             $lifetime = $this->rememberMe ? 24*3600 : 0;
             $session = Yii::$app->session;
             session_set_cookie_params($lifetime);
@@ -106,5 +90,22 @@ class User extends ActiveRecord
         }
         return false;
     }
-    
+
+    public function regByMail($data)
+    {
+        $data['User']['username'] = 'imooc_'.uniqid();
+        $data['User']['userpass'] = uniqid();
+        $this->scenario = 'regbymail';
+        if ($this->load($data) && $this->validate()) {
+            $mailer = Yii::$app->mailer->compose('createuser', ['userpass' => $data['User']['userpass'], 'username' => $data['User']['username']]);
+            $mailer->setFrom('imooc_shop@163.com');
+            $mailer->setTo($data['User']['useremail']);
+            $mailer->setSubject('东软商城-新建用户');
+            if ($mailer->send() && $this->reg($data, 'regbymail')) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
