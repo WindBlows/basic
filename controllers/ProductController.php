@@ -10,7 +10,7 @@ class ProductController extends CommonController
 {
     public function actionIndex()
     {
-        $this->layout = "layout2";
+        $this->layout = 'layout2';
         $cid = Yii::$app->request->get("cateid");
         $where = "cateid = :cid and ison = '1'";
         $params = [':cid' => $cid];
@@ -30,7 +30,7 @@ class ProductController extends CommonController
 
     public function actionDetail()
     {
-        $this->layout = "layout2";
+        $this->layout = 'layout2';
         $productid = Yii::$app->request->get("productid");
         $product = Product::find()->where('productid = :id', [':id' => $productid])->asArray()->one();
         $data['all'] = Product::find()->where('ison = "1"')->orderby('createtime desc')->limit(7)->all();
