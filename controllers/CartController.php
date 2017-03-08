@@ -10,8 +10,23 @@ class CartController extends CommonController
 {
 	public function actionIndex()
 	{
+		if (Yii::$app->session['isLogin'] != 1) {
+			return $this->redirect(['member/auth']);
+		}
+		$userid = User::find()->where('username = :name', [':name' => Yii::$app->session['loginname']])->one()->userid;
+		$cart = Cart::find()->where('userid = :id', [':id' => $userid])->asArray()->all();
+		$data = [];
+		foreach ($cart as $k => $pro) {
+			$product = Product::find()->where('productid = :pid', [':pid' => $pro['productid']])->one();
+			$data[$k]['cover'] = $product->cover;
+			$data[$k]['title'] = $product->title;
+			$data[$k]['productnum'] = $pro['productnum'];
+			$data[$k]['price'] = $pro['price'];
+			$data[$k]['productid'] = $pro['productid'];
+			$data[$k]['cartid'] = $pro['cartid'];
+		}
 		$this->layout = "layout1";
-		return $this->render("index");
+		return $this->render("index", ['data' => $data]);
 	}
 
 	public function actionAdd()
