@@ -119,6 +119,7 @@ class Admin extends ActiveRecord
        // $data['Admin']['repass'] = md5($data['Admin']['repass']);
         if ($this->load($data) && $this->validate()) {
             $this->adminpass = md5($this->adminpass);
+            $this->createtime = time();
             if ($this->save(false)) {
                 return true;
             }
