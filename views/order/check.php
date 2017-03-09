@@ -37,7 +37,7 @@
                     </div><!-- /.field-row -->
 
                     <div class="row field-row">
-                        <div class="col-xs-12">
+                        <div class="col-xs-12 col-sm-6">
                             <label>公司名称</label>
                             <input class="le-input" name="company" >
                         </div>
