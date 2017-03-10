@@ -37,7 +37,7 @@
                     </div><!-- /.field-row -->
 
                     <div class="row field-row">
-                        <div class="col-xs-12 col-sm-6">
+                        <div class="col-xs-12">
                             <label>公司名称</label>
                             <input class="le-input" name="company" >
                         </div>
@@ -112,7 +112,10 @@
                     <?php $total += $product['productnum']*$product['price'] ?>
                 <?php endforeach; ?>
             </section><!-- /#your-order -->
-            <input type="hidden" name="addressid" value>
+            <div class="col-xs-12">
+                            <input class="le-radio big address" type="hidden" name="addressid" value="<?php echo $address['addressid'] ?>" <?php if ($key == 0) {echo 'checked = "checked"';} ?> />
+                            <a class="simple-link bold" href="#"><?php echo $address['firstname'].$address['lastname']." ".$address['company']." ".$address['address']. " " . $address['postcode']. " ". $address['email']." ".$address['telephone'] ?></a>
+                        </div>
             <div id="total-area" class="row no-margin">
                 <div class="col-xs-12 col-lg-4 col-lg-offset-8 no-margin-right">
                     <div id="subtotal-holder">
@@ -137,7 +140,7 @@
                         <ul id="total-field" class="tabled-data inverse-bold ">
                             <li>
                                 <label>订单总额</label>
-                                <div class="value" style="width:100%;text-align:right" id="ototal">￥ <span><?php echo $total + 20 ?></span></div>
+                                <div class="value" style="width:100%;text-align:right" id="total">￥ <span><?php echo $total + 20 ?></span></div>
                             </li>
                         </ul><!-- /.tabled-data -->
 

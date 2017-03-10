@@ -41,7 +41,7 @@ class CartController extends CommonController
 			$num = Yii::$app->request->post()['productnum'];
 			$productid = Yii::$app->request->post()['productid'];
 			$data['Cart'] = $post;
-			$data['Cart']['userid'] = $userid; 
+			$data['Cart']['userid'] = $userid;
 		}
 
 		if (Yii::$app->request->isGet) {

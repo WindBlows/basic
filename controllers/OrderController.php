@@ -1,13 +1,15 @@
 <?php
 namespace app\controllers;
 use app\controllers\CommonController;
+use Yii;
 use app\models\Order;
-use app\models\Cart;
 use app\models\OrderDetail;
+use app\models\Cart;
 use app\models\Product;
 use app\models\User;
 use app\models\Address;
-use Yii;
+use app\models\Pay;
+use dzer\express\Express;
 
 class OrderController extends CommonController
 {
@@ -86,6 +88,54 @@ class OrderController extends CommonController
             return $this->redirect(['cart/index']);
         }
         return $this->redirect(['order/check', 'orderid' => $orderid]);
+    }
+
+    public function actionConfirm()
+    {
+		try {
+            if (Yii::$app->session['isLogin'] != 1) {
+                return $this->redirect(['member/auth']);
+            }
+            if (!Yii::$app->request->isPost) {
+                throw new \Exception();
+            }
+            $post = Yii::$app->request->post();
+            $loginname = Yii::$app->session['loginname'];
+            $usermodel = User::find()->where('username = :name or useremail = :email', [':name' => $loginname, ':email' => $loginname])->one();
+            if (empty($usermodel)) {
+                throw new \Exception();
+            }
+            $userid = $usermodel->userid;
+            $model = Order::find()->where('orderid = :oid and userid = :uid', [':oid' => $post['orderid'], ':uid' => $userid])->one();
+            if (empty($model)) {
+                throw new \Exception();
+            }
+            $model->scenario = "update";
+            $post['status'] = Order::CHECKORDER;
+            $details = OrderDetail::find()->where('orderid = :oid', [':oid' => $post['orderid']])->all();
+            $amount = 0;
+            foreach($details as $detail) {
+                $amount += $detail->productnum*$detail->price;
+            }
+            if ($amount <= 0) {
+                throw new \Exception();
+            }
+            $express = Yii::$app->params['expressPrice'][$post['expressid']];
+            if ($express < 0) {
+                throw new \Exception();
+            }
+            $amount += $express;
+            $post['amount'] = $amount;
+            $data['Order'] = $post;
+			if (empty($post['addressid'])) {
+				return $this->redirect(['order/pay', 'orderid' => $post['orderid'], 'paymethod' => $post['paymethod']]);
+			}
+            if ($model->load($data) && $model->save()) {
+                return $this->redirect(['order/pay', 'orderid' => $post['orderid'], 'paymethod' => $post['paymethod']]);
+            }
+        }catch(\Exception $e) {
+            return $this->redirect(['index/index']);
+        }
     }
 
 
