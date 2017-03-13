@@ -44,7 +44,13 @@ class OrderController extends CommonController
 	public function actionIndex()
 	{
 		$this->layout = "layout2";
-		return $this->render("index");
+        if (Yii::$app->session['isLogin'] != 1) {
+            return $this->redirect(['member/auth']);
+        }
+        $loginname = Yii::$app->session['loginname'];
+        $userid = User::find()->where('username = :name or useremail = :email', [':name' => $loginname, ':email' => $loginname])->one()->userid;
+        $orders = Order::getProducts($userid);
+        return $this->render("index", ['orders' => $orders]);
 	}
 
 	public function actionAdd()
@@ -111,7 +117,7 @@ class OrderController extends CommonController
                 throw new \Exception();
             }
             $model->scenario = "update";
-            $post['status'] = Order::CHECKORDER;
+            $post['status'] = Order::PAYSUCCESS;
             $details = OrderDetail::find()->where('orderid = :oid', [':oid' => $post['orderid']])->all();
             $amount = 0;
             foreach($details as $detail) {
@@ -138,5 +144,37 @@ class OrderController extends CommonController
         }
     }
 
+    public function actionPay()
+    {
+    	$this->layout = "layout1";
+        $model = new Order;
+        if (Yii::$app->request->isPost) {
+            $post = Yii::$app->request->post();
+            var_dump($post);
+        }
+        // $orderid = Yii::$app->request->get('orderid');
+        // var_dump($orderid);
+
+        return $this->render("pay", ['model' => $model]);
+    }
+
+    public function actionGetexpress()
+    {
+        $expressno = Yii::$app->request->get('expressno');
+        $res = Express::search($expressno);
+        echo $res;
+        exit;
+    }
+
+    public function actionReceived()
+    {
+        $orderid = Yii::$app->request->get('orderid');
+        $order = Order::find()->where('orderid = :oid', [':oid' => $orderid])->one();
+        if (!empty($order) && $order->status == Order::SENDED) {
+            $order->status = Order::RECEIVED;
+            $order->save();
+        }
+        return $this->redirect(['order/index']);
+    }
 
 }

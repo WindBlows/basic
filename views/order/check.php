@@ -36,12 +36,7 @@
                         </div>
                     </div><!-- /.field-row -->
 
-                    <div class="row field-row">
-                        <div class="col-xs-12">
-                            <label>公司名称</label>
-                            <input class="le-input" name="company" >
-                        </div>
-                    </div><!-- /.field-row -->
+                    
 
                     <div class="row field-row">
                         <div class="col-xs-12 col-sm-6">
@@ -158,7 +153,7 @@
             </div><!-- /#payment-method-options -->
             
             <div class="place-order-button">
-                <button class="le-button big">确认订单</button>
+                <button class="le-button big">确认订单,并付款</button>
             </div><!-- /.place-order-button -->
 
         </div><!-- /.col -->
