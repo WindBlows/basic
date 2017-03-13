@@ -108,8 +108,8 @@
                 <?php endforeach; ?>
             </section><!-- /#your-order -->
             <div class="col-xs-12">
-                            <input class="le-radio big address" type="hidden" name="addressid" value="<?php echo $address['addressid'] ?>" <?php if ($key == 0) {echo 'checked = "checked"';} ?> />
-                            <a class="simple-link bold" href="#"><?php echo $address['firstname'].$address['lastname']." ".$address['company']." ".$address['address']. " " . $address['postcode']. " ". $address['email']." ".$address['telephone'] ?></a>
+                            <input class="" type="hidden" name="addressid" value="<?php echo $address['addressid'] ?>" <?php if ($key == 0) {echo 'checked = "checked"';} ?> />
+                            
                         </div>
             <div id="total-area" class="row no-margin">
                 <div class="col-xs-12 col-lg-4 col-lg-offset-8 no-margin-right">
