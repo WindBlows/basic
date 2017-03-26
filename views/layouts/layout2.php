@@ -79,10 +79,10 @@
         <div class="col-xs-12 col-sm-12 col-md-6 top-search-holder no-margin">
             <div class="contact-row">
     <div class="phone inline">
-        <i class="fa fa-phone"></i> (+086) 123 456 7890
+        <i class="fa fa-phone"></i> 186 9866 2622
     </div>
     <div class="contact inline">
-        <i class="fa fa-envelope"></i> contact@<span class="le-color">jason.com</span>
+        <i class="fa fa-envelope"></i> contact@<span class="le-color">neugaoyang.com</span>
     </div>
 </div><!-- /.contact-row -->
 <!-- ============================================================= SEARCH AREA ============================================================= -->
@@ -510,7 +510,7 @@
         <div class="container">
             <div class="col-xs-12 col-sm-6 no-margin">
                 <div class="copyright">
-                    &copy; <a href="index.html">Imooc.com</a> - all rights reserved
+                    &copy; <a href="index.html">neugaoyang.com</a> - all rights reserved
                 </div><!-- /.copyright -->
             </div>
             <div class="col-xs-12 col-sm-6 no-margin">
