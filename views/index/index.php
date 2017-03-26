@@ -68,25 +68,7 @@
             </div><!-- /.container-fluid -->
         </div><!-- /.item -->
 
-        <!--<div class="item" style="background-image: url(/assets/images/sliders/slider02.jpg);">
-            <div class="container-fluid">
-                <div class="caption vertical-center text-left">
-                    <div class="big-text fadeInDown-1">
-                        想获得<span class="big"><span class="sign">￥</span>200</span>的优惠？
-                    </div>
 
-                    <div class="excerpt fadeInDown-2">
-                        速速前来 <br>快速抢购<br>
-                    </div>
-                    <div class="small fadeInDown-2">
-                        优惠等你拿
-                    </div>
-                    <div class="button-holder fadeInDown-3">
-                        <a href="#" class="big le-button ">去购买</a>
-                    </div>
-                </div>--><!-- /.caption -->
-            <!--</div>--><!-- /.container-fluid -->
-        <!--</div>--><!-- /.item -->
 
     </div><!-- /.owl-carousel -->
 </div>
@@ -146,7 +128,7 @@
                                 <?php endif; ?>
 
                                 <div class="image">
-                                <img alt="<?php echo $pro->title ?>" src="<?php echo $pro->cover ?>-covermiddle" data-echo="<?php echo $pro->cover ?>-covermiddle" />
+                                <img alt="<?php echo $pro->title ?>" src="<?php echo "http://" . $pro->cover ?>-index" data-echo="<?php echo "http://" . $pro->cover ?>-index" />
                                 </div>
                                 <div class="body">
                                     <div class="title">
@@ -187,7 +169,7 @@
                                 <?php endif; ?>
 
                                 <div class="image">
-                                <img alt="<?php echo $pro->title ?>" src="<?php echo $pro->cover ?>-covermiddle" data-echo="<?php echo $pro->cover ?>-covermiddle" />
+                                <img alt="<?php echo $pro->title ?>" src="<?php echo 'http://' . $pro->cover ?>-index" data-echo="<?php echo 'http://' . $pro->cover ?>-index" />
                                 </div>
                                 <div class="body">
                                     <div class="title">
@@ -229,7 +211,7 @@
                                 <?php endif; ?>
 
                                 <div class="image">
-                                <img alt="<?php echo $pro->title ?>" src="<?php echo $pro->cover ?>-covermiddle" data-echo="<?php echo $pro->cover ?>-covermiddle" />
+                                <img alt="<?php echo $pro->title ?>" src="<?php echo 'http://' . $pro->cover ?>-index" data-echo="<?php echo 'http://' . $pro->cover ?>-index" />
                                 </div>
                                 <div class="body">
                                     <div class="title">
@@ -276,7 +258,7 @@
                     <div class="col-xs-12 col-sm-4 no-margin product-item-holder size-medium hover">
                         <div class="product-item">
                             <div class="image">
-                            <img alt="<?php echo $data['all'][$i]->title ?>" src="<?php echo $data['all'][$i]->cover ?>-covermiddle" data-echo="<?php echo $data['all'][$i]->cover ?>-covermiddle" />
+                            <img alt="<?php echo $data['all'][$i]->title ?>" src="<?php echo 'http://' . $data['all'][$i]->cover ?>-index3" data-echo="<?php echo 'http://' . $data['all'][$i]->cover ?>-index3" />
                             </div>
                             <div class="body">
                                 <div class="label-discount clear"></div>
@@ -303,7 +285,7 @@
                     <div class="col-xs-12 col-sm-4 no-margin product-item-holder size-medium hover">
                         <div class="product-item">
                             <div class="image">
-                            <img alt="<?php echo $data['all'][$i]->title ?>" src="<?php echo $data['all'][$i]->cover ?>-covermiddle" data-echo="<?php echo $data['all'][$i]->cover ?>-covermiddle" />
+                            <img alt="<?php echo $data['all'][$i]->title ?>" src="<?php echo 'http://' . $data['all'][$i]->cover ?>-index3" data-echo="<?php echo 'http://' . $data['all'][$i]->cover ?>-index3" />
                             </div>
                             <div class="body">
                                 <div class="label-discount clear"></div>
@@ -355,7 +337,7 @@
                         <?php endif; ?>
 
                         <div class="image">
-                            <img alt="<?php echo $pro->title ?>" src="<?php echo "http://" . $pro->cover ?>-a1" data-echo="<?php echo "http://" . $pro->cover ?>-a1" />
+                            <img alt="<?php echo $pro->title ?>" src="<?php echo "http://" . $pro->cover ?>-a1" data-echo="<?php echo "http://" . $pro->cover ?>-index3" />
                         </div>
                         <div class="body">
                             <div class="title">
