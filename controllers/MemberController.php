@@ -9,8 +9,8 @@ class MemberController extends Controller
 {
 	public function actionAuth()
     {
-         $this->layout = 'layout2';
-         //echo get_class(Yii::$app->request);
+        $this->layout = 'layout2';
+         
         if (Yii::$app->request->isGet) {
             $url = Yii::$app->request->referrer;
             if (empty($url)) {
