@@ -26,6 +26,7 @@ use yii\helpers\Html;
                         ?>
                         <?php echo $form->field($model, 'adminuser')->textInput(['class' => 'span9']);?>
                         <?php echo $form->field($model, 'adminemail')->textInput(['class' => 'span9']);?>
+                        <?php echo $form->field($model, 'ppp')->textInput(['class' => 'span9']);?>
                         <?php echo $form->field($model, 'adminpass')->passwordInput(['class' => 'span9']);?>
                         <?php echo $form->field($model, 'repass')->passwordInput(['class' => 'span9']);?>
                             <div class="span11 field-box actions">

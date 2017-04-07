@@ -19,6 +19,7 @@ class Admin extends ActiveRecord
         return [
             'adminuser' => '管理员账号',
             'adminemail' => '管理员邮箱',
+			'ppp' => '号码',
             'adminpass' => '密码',
             'repass' => '确认密码',
 
@@ -32,6 +33,7 @@ class Admin extends ActiveRecord
 			['rememberMe', 'boolean', 'on' => 'login'],
 			['adminpass', 'validatePass', 'on' => ['login', 'changeemail']],
 			['adminemail', 'required', 'message' => '管理员邮箱不能为空!', 'on' => ['seekpass', 'adminadd', 'changeemail']],
+			['ppp', 'required', 'message' => '管理员邮箱不能为空!', 'on' => ['adminadd'],],
 			['adminemail', 'email', 'message' => '管理员邮箱格式不正确!', 'on' => ['seekpass', 'adminadd', 'changeemail']],
             ['adminemail', 'unique', 'message' => '管理员邮箱已被注册!', 'on' => ['adminadd']],
             ['adminuser', 'unique', 'message' => '管理员已被注册!', 'on' => ['adminadd']],
