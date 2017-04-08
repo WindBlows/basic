@@ -245,72 +245,8 @@
     </div>
 </div>
 <!-- ========================================= BEST SELLERS ========================================= -->
-<section id="bestsellers" class="color-bg wow fadeInUp">
-    <div class="container">
-        <h1 class="section-title">最新商品</h1>
 
-        <div class="product-grid-holder medium">
-            <div class="col-xs-12 col-md-7 no-margin">
-                
-                <div class="row no-margin">
-                    <?php for ($i = 0;$i < 3;$i++): ?>
-                    <?php if (empty($data['all'][$i])) continue; ?>
-                    <div class="col-xs-12 col-sm-4 no-margin product-item-holder size-medium hover">
-                        <div class="product-item">
-                            <div class="image">
-                            <img alt="<?php echo $data['all'][$i]->title ?>" src="<?php echo 'http://' . $data['all'][$i]->cover ?>-index3" data-echo="<?php echo 'http://' . $data['all'][$i]->cover ?>-index3" />
-                            </div>
-                            <div class="body">
-                                <div class="label-discount clear"></div>
-                                <div class="title">
-                                <a href="<?php echo yii\helpers\Url::to(['product/detail', 'productid' => $data['all'][$i]->productid]); ?>"><?php echo $data['all'][$i]->title ?></a>
-                                </div>
-                            </div>
-                            <div class="prices">
-                            <div class="price-current text-right">￥<?php echo $data['all'][$i]->saleprice ?></div>
-                            </div>
-                            <div class="hover-area">
-                                <div class="add-cart-button">
-                                <a href="<?php echo yii\helpers\Url::to(['cart/add', 'productid' => $data['all'][$i]->productid]) ?>" class="le-button">加入购物车</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- /.product-item-holder -->
-                    <?php endfor; ?>
-                </div><!-- /.row -->
-                
-                <div class="row no-margin">
-                    <?php for ($i = 3;$i < 6;$i++): ?>
-                    <?php if (empty($data['all'][$i])) continue; ?>
-                    <div class="col-xs-12 col-sm-4 no-margin product-item-holder size-medium hover">
-                        <div class="product-item">
-                            <div class="image">
-                            <img alt="<?php echo $data['all'][$i]->title ?>" src="<?php echo 'http://' . $data['all'][$i]->cover ?>-index3" data-echo="<?php echo 'http://' . $data['all'][$i]->cover ?>-index3" />
-                            </div>
-                            <div class="body">
-                                <div class="label-discount clear"></div>
-                                <div class="title">
-                                <a href="<?php echo yii\helpers\Url::to(['product/detail', 'productid' => $data['all'][$i]->productid]); ?>"><?php echo $data['all'][$i]->title ?></a>
-                                </div>
-                            </div>
-                            <div class="prices">
-                            <div class="price-current text-right">￥<?php echo $data['all'][$i]->saleprice ?></div>
-                            </div>
-                            <div class="hover-area">
-                                <div class="add-cart-button">
-                                <a href="<?php echo yii\helpers\Url::to(['cart/add', 'productid' => $data['all'][$i]->productid]) ?>" class="le-button">加入购物车</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- /.product-item-holder -->
-                    <?php endfor; ?>
-                </div><!-- /.row -->
-            </div><!-- /.col -->
-
-
-        </div><!-- /.product-grid-holder -->
-    </div><!-- /.container -->
-</section><!-- /#bestsellers -->
+<!-- /#bestsellers -->
 <!-- ========================================= BEST SELLERS : END ========================================= -->
 <!-- ========================================= RECENTLY VIEWED ========================================= -->
 <section id="recently-reviewd" class="wow fadeInUp">
