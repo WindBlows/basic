@@ -18,7 +18,7 @@
                     <p>
                         <?php foreach($order->products as $product): ?>
                         <div style="display:inline">
-                            <img src="<?php echo $product->cover ?>-piclistsmall">
+                            <img src="<?php echo 'http://' . $product->cover ?>-order">
                             <?php echo $product->num ?> x <?php echo $product->title ?>
                         </div>
                         <?php endforeach; ?>

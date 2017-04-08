@@ -50,20 +50,16 @@
             <div class="container-fluid">
                 <div class="caption vertical-center text-left">
                     <div class="big-text fadeInDown-1">
-                        最高优惠<span class="big"><span class="sign">￥</span>400</span>
+                        <span class="big"><span class="sign"></span></span>
                     </div>
 
                     <div class="excerpt fadeInDown-2">
-                        潮玩生活<br>
-                        享受生活<br>
-                        引领时尚
+                        <br>
+                        <br>
+                        
                     </div>
-                    <div class="small fadeInDown-2">
-                        最后 5 天限时抢购
-                    </div>
-                    <div class="button-holder fadeInDown-3">
-                        <a href="#" class="big le-button ">去购买</a>
-                    </div>
+                    
+                   
                 </div><!-- /.caption -->
             </div><!-- /.container-fluid -->
         </div><!-- /.item -->
