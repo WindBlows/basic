@@ -7,6 +7,7 @@ class Admin extends ActiveRecord
 {
 	public $rememberMe = true;
 	public $repass;
+	//public $adminpass;
 	public $enableCsrfValidation = false;
 
 	public static function tableName()

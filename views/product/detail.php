@@ -16,8 +16,8 @@
             <?php $i = 2 ?>
             <?php foreach((array)json_decode($product['pics'], true) as $k=>$pic): ?>
             <div class="single-product-gallery-item" id="slide<?php echo $i ?>">
-                <a data-rel="prettyphoto" href="<?php echo $pic ?>-detail">
-                    <img class="img-responsive" alt="" src="<?php echo $pic ?>-detail" />
+                <a data-rel="prettyphoto" href="<?php echo 'http://' . $pic ?>-detail">
+                    <img class="img-responsive" alt="" src="<?php echo 'http://' . $pic ?>-detail" />
                 </a>
             </div><!-- /.single-product-gallery-item -->
             <?php $i++ ?>

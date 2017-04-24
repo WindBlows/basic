@@ -107,10 +107,15 @@
                     <?php $total += $product['productnum']*$product['price'] ?>
                 <?php endforeach; ?>
             </section><!-- /#your-order -->
-            <div class="col-xs-12">
-                            <input class="" type="hidden" name="addressid" value="<?php echo $address['addressid'] ?>" <?php if ($key == 0) {echo 'checked = "checked"';} ?> />
+           <?php foreach($addresses as $key => $address): ?>
+                    <div class="row field-row" style="margin-top:10px">
+                        <div class="col-xs-12">
+                            <input class='' type="hidden" name="addressid" value="<?php echo $address['addressid'] ?>" <?php if ($key == 0) {echo 'checked = "checked"';} ?> />
                             
                         </div>
+                        <a style="margin-left:45px" href="<?php echo yii\helpers\Url::to(['address/del', 'addressid' => $address['addressid']]) ?>">删除</a>
+                    </div><!-- /.field-row -->
+                    <?php endforeach; ?>
             <div id="total-area" class="row no-margin">
                 <div class="col-xs-12 col-lg-4 col-lg-offset-8 no-margin-right">
                     <div id="subtotal-holder">
