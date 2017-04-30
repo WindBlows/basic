@@ -93,12 +93,12 @@ class User extends ActiveRecord
 
     public function regByMail($data)
     {
-        $data['User']['username'] = 'imooc_'.uniqid();
+        $data['User']['username'] = 'neu_'.uniqid();
         $data['User']['userpass'] = uniqid();
         $this->scenario = 'regbymail';
         if ($this->load($data) && $this->validate()) {
             $mailer = Yii::$app->mailer->compose('createuser', ['userpass' => $data['User']['userpass'], 'username' => $data['User']['username']]);
-            $mailer->setFrom('imooc_shop@163.com');
+            $mailer->setFrom('goyo812@163.com');
             $mailer->setTo($data['User']['useremail']);
             $mailer->setSubject('东软商城-新建用户');
             if ($mailer->send() && $this->reg($data, 'regbymail')) {

@@ -228,7 +228,7 @@
                         <div class="row">
                             <div class="no-margin col-xs-12 col-sm-4 image-holder">
                                 <div class="image">
-                                    <img alt="" src="<?php echo $pro['cover'] ?>-covermiddle"  />
+                                    <img alt="" src="<?php echo 'http://' . $pro['cover'] ?>-order"  />
                                 </div>
                             </div><!-- /.image-holder -->
                             <div class="no-margin col-xs-12 col-sm-5 body-holder">

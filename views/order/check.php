@@ -13,7 +13,7 @@
                     <div class="row field-row" style="margin-top:10px">
                         <div class="col-xs-12">
                             <input class="le-radio big address" type="radio" name="address" value="<?php echo $address['addressid'] ?>" <?php if ($key == 0) {echo 'checked = "checked"';} ?> />
-                            <a class="simple-link bold" href="#"><?php echo $address['firstname'].$address['lastname']." ".$address['company']." ".$address['address']. " " . $address['postcode']. " ". $address['email']." ".$address['telephone'] ?></a>
+                            <a class="simple-link bold" href="#"><?php echo $address['firstname'].$address['lastname']. " " . $address['address']. " " . $address['postcode']. " ". $address['email']." ".$address['telephone'] ?></a>
                         </div>
                         <a style="margin-left:45px" href="<?php echo yii\helpers\Url::to(['address/del', 'addressid' => $address['addressid']]) ?>">删除</a>
                     </div><!-- /.field-row -->
@@ -41,11 +41,11 @@
                     <div class="row field-row">
                         <div class="col-xs-12 col-sm-6">
                             <label>地址*</label>
-                            <input class="le-input" data-placeholder="例如：北京市朝阳区" name="address1" >
+                            <input class="le-input" data-placeholder="例如：辽宁省大连市" name="address1" >
                         </div>
                         <div class="col-xs-12 col-sm-6">
                             <label>&nbsp;</label>
-                            <input class="le-input" data-placeholder="例如：酒仙桥北路" name="address2" >
+                            <input class="le-input" data-placeholder="例如：河口软件园" name="address2" >
                         </div>
                     </div><!-- /.field-row -->
 
